@@ -1,0 +1,138 @@
+#market {
+    background: url(./img/12.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+#list {
+    background-color: ghostwhite;
+    border-radius: 20px;
+    width: 50%;
+    margin: auto;
+    padding: 10px
+}
+
+#listItem {
+    position: relative;
+    text-align: center;
+    margin-top: 10px;
+    margin-left: 9px;
+    display: inline-block;
+    width: 31%;
+    border-style: double;
+    border-color: black;
+    border-radius: 3%;
+}
+
+#carDescription {
+    width: 50%;
+    background-color: ghostwhite;
+    margin: auto;
+    padding: 15px;
+    border-radius: 5%;
+}
+
+#img {
+    max-width: 100%;
+    height: auto;
+}
+
+.desc {
+    display: inline-block;
+    width: 45%;
+    font-size: 15pt;
+    height: 3%;
+}
+
+.container-add {
+    width: 50%;
+    background-color: ghostwhite;
+    margin: auto;
+    padding: 15px;
+    border-radius: 5%;
+}
+
+.container-addLine {
+    width: 50%;
+    display: inline-block;
+    padding: 1%;
+    font-style: italic;
+}
+
+#addCarButton {
+    color: brown;
+    height: 50px;
+    width: 150px;
+    font-size: 10pt;
+    font-style: oblique;
+    font-weight: bold;
+    background-color: gainsboro;
+    border-radius: 10%;
+}
+
+#statusDescButton {
+    position: absolute;
+    right: 25%;
+    top: 2%;
+    background-color: black;
+    border-radius: 20%;
+    text-align: center;
+    font-style: italic;
+    color: whitesmoke;
+}
+
+#add {
+    position: fixed;
+    top: 5%;
+    right: 10%;
+}
+
+h1 {
+    text-align: center;
+}
+
+#status {
+    position: absolute;
+    right: 0;
+    top: 60%;
+    color:#5e0003;
+}
+
+#showActiveUser {
+   position: absolute;
+    right: 10%;
+    top: 1%;
+    color: black;
+}
+
+#home {
+    position: absolute;
+    right: 25%;
+    font-size: 15px;
+    font-style: oblique;
+}
+
+#goHome {
+    border: white;
+    color: black;
+    font-style: italic;
+    background-color: #acfff8;
+    border-radius: 50%;
+}
+
+#hello  {
+    text-align: center;
+    font-style: italic;
+    color: lightslategray;
+}
+
+#addPhoto {
+    width: 50%;
+    margin: auto;
+}
+
+#error {
+    color: #5e0003;
+}
