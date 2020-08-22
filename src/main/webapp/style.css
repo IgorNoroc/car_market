@@ -37,6 +37,7 @@
 #img {
     max-width: 100%;
     height: auto;
+    border-radius: 5%;
 }
 
 .desc {
@@ -62,14 +63,18 @@
 }
 
 #addCarButton {
-    color: brown;
+    color: #0c2209;
     height: 50px;
     width: 150px;
     font-size: 10pt;
     font-style: oblique;
     font-weight: bold;
-    background-color: gainsboro;
-    border-radius: 10%;
+    background-color: whitesmoke;
+    border-radius: 30%;
+}
+
+#addCarButton:hover {
+    color: #55b9c7;
 }
 
 #statusDescButton {
@@ -81,6 +86,10 @@
     text-align: center;
     font-style: italic;
     color: whitesmoke;
+}
+
+#statusDescButton:hover {
+    color: #acfff8;
 }
 
 #add {
@@ -122,10 +131,15 @@ h1 {
     border-radius: 50%;
 }
 
+#goHome:hover {
+    color: #c7080c;
+}
+
 #hello  {
     text-align: center;
     font-style: italic;
-    color: lightslategray;
+    color: #181c25;
+    text-shadow: whitesmoke 0 0 2px;
 }
 
 #addPhoto {
@@ -136,3 +150,21 @@ h1 {
 #error {
     color: #5e0003;
 }
+
+#selectContainer {
+    position: relative;
+    top: 3%;
+    width: 50%;
+    margin: auto;
+}
+
+.select {
+    display: inline-block;
+    font-family: Symbol;
+    padding: 21px;
+}
+
+.textDesc {
+    color: grey;
+}
+

@@ -64,17 +64,69 @@ public class DAO {
         return user;
     }
 
+    public void update(Car car) {
+        request(session -> {
+            session.update(car);
+            return null;
+        });
+    }
+
     public Collection<Car> getCars() {
         return request(
                 session -> session.createQuery("from Car").list()
         );
     }
 
-    public void update(Car car) {
-        request(session -> {
-            session.update(car);
-            return null;
-        });
+    public Collection<Car> getCarsFilterDayPhotoName(String search) {
+        return request(session ->
+                session.createQuery("from Car " +
+                        "where extract(day from publish) = extract(day from now()) " +
+                        "and photo!='' and lower(name) like lower(:search) ")
+                        .setParameter("search", search + "%")
+                        .list());
+    }
+
+    public Collection<Car> getCarsFilerDay() {
+        return request(session ->
+                session.createQuery("from Car " +
+                        "where extract(day from publish) = extract(day from now())").list());
+    }
+
+    public Collection<Car> getCarsFilterPhoto() {
+        return request(session ->
+                session.createQuery("from Car where photo != ''").list());
+    }
+
+    public Collection<Car> getCarsFilterName(String search) {
+        return request(session ->
+                session.createQuery("from Car where lower(name) like lower(:search) ")
+                        .setParameter("search", search + "%")
+                        .list());
+    }
+
+    public Collection<Car> getCarsFilterDayPhoto() {
+        return request(session ->
+                session.createQuery("from Car " +
+                        "where extract(day from publish) = extract(day from now()) " +
+                        "and photo!=''").list());
+    }
+
+    public Collection<Car> getCarsFilterPhotoName(String search) {
+        return request(session ->
+                session.createQuery("from Car" +
+                        " where photo !=''" +
+                        " and lower(name) like lower(:search)")
+                        .setParameter("search", search + "%")
+                        .list());
+    }
+
+    public Collection<Car> getCarsFilterDayName(String search) {
+        return request(session ->
+                session.createQuery("from Car " +
+                        "where extract(day from publish) = extract(day from now()) " +
+                        "and lower(name) like lower(:search)")
+                        .setParameter("search", search + "%")
+                        .list());
     }
 
     /**

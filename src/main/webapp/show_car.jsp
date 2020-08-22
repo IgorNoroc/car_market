@@ -12,24 +12,43 @@
 </head>
 <body>
 <h1 id="hello">Рынок Автомобилей</h1>
-</body>
 <%
-    SimpleDateFormat format = new SimpleDateFormat("dd-MMMM-yyyy");
+    SimpleDateFormat format = new SimpleDateFormat("dd MMMM yyyy");
+    Collection<Car> cars = (Collection<Car>) request.getServletContext().getAttribute("cars");
 %>
+
 <div id="showActiveUser">
     <%User user = (User) request.getSession().getAttribute("user"); %>
     <a href="index.jsp">
         <%request.getServletContext().setAttribute("error", null);%>
         <%=user.getName()%> | Выйти...</a>
 </div>
+
 <div id="add">
     <form action="<%=request.getContextPath()%>/add_car.jsp">
         <button id="addCarButton" type="submit" class="btn btn-success">Добавить объявление</button>
     </form>
 </div>
 
+<div id="selectContainer">
+    <form action="<%=request.getContextPath()%>/paramSearch" method="get">
+        <div class="select">
+           < за текущий день :<input type="checkbox" name="lastDay" title="last"> >
+        </div>
+        <div class="select">
+           < только с фото : <input type="checkbox" name="onlyWithPhoto" title="onlyPhoto"> >
+        </div>
+        <div class="select">
+           < поиск по названию : <input type="text" name="search" title="search"> >
+        </div>
+        <div class="select">
+            <button type="submit" class="btn btn-success" style="background-color: grey">Выполнить</button>
+        </div>
+    </form>
+</div>
+
 <div id="list" class="container">
-    <% for (Car car : (Collection<Car>) request.getServletContext().getAttribute("cars")) { %>
+    <% for (Car car : cars) { %>
     <div id="listItem">
         <h5 id="status">
             <% if (car.getStatus()) {%>
@@ -42,13 +61,13 @@
             <img src="<%=request.getContextPath()%>/download?photo=<%=car.getPhoto()%>" width="100%" height="20%"
                  alt="фото автомобиля"/> </a>
         <br/>
-        Название авто : <%=car.getName()%>
+        <b>авто</b> : <%=car.getName()%>
         <br/>
-        Цена : <%=car.getPrice()%> рублей
+        <b>цена</b> : <%=car.getPrice()%> рублей
         <br/>
-        дата публикации : <%=format.format(car.getPublish())%>
+        <b>дата публикации</b> : <%=format.format(car.getPublish())%>
     </div>
     <%}%>
 </div>
-</form>
+</body>
 </html>

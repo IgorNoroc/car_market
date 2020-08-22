@@ -52,13 +52,12 @@
         <%=user.getName()%> | Выйти...</a>
 </div>
 <div class="container-add">
-    <form action="<%=request.getContextPath()%>/addCar"  method="post" enctype="multipart/form-data">
-        <div class="container-addLine"> Введите имя авто : <input type="text"  id="name" placeholder="введите имя"
+    <form action="<%=request.getContextPath()%>/addCar" method="post" enctype="multipart/form-data">
+        <div class="container-addLine"> Введите имя авто : <input type="text" id="name" placeholder="введите имя"
                                                                   title="имя"
                                                                   name="name"></div>
         <div class="container-addLine"> Цена : <input type="text" id="price" placeholder="введите цену" title="цена"
-                                                      name="price">
-            рублей.
+                                                      name="price"> рублей.
         </div>
         <div class="container-addLine"> Год выпуска: <input type="date" id="created" placeholder="произведенно"
                                                             title="created"
@@ -98,7 +97,7 @@
             <option>гибрид</option>
         </select></div>
         <div class="container-addLine">
-                Добавить фото : <input type="file"  style="font-family: 'Sitka Banner'" name="file">
+            Добавить фото : <input type="file" style="font-family: 'Sitka Banner'" name="file">
         </div>
         <div class="container-addLine">
             <button type="submit" class="btn btn-primary" style="color: black" onclick="return validate()">
@@ -107,9 +106,9 @@
     </form>
 </div>
 <div id="home">
-    <form action="<%=request.getContextPath()%>/allCars" method="get">
+    <a href="show_car.jsp">
         <button id="goHome" type="submit" class="btn btn-success">на главную страницу...</button>
-    </form>
+    </a>
 </div>
 </body>
 </html>
